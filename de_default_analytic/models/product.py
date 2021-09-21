@@ -5,8 +5,8 @@ from odoo import models, fields, api
 class ProductTemplate(models.Model):
     _inherit = 'product.template'
 
-    income_analytic_tag_ids = fields.Many2many(comodel_name='account.analytic.tag', relation= 'income_analytic_tag_products_rel',column1='id1_inc', culomn2='id2',string='Analytic Tags',stored=True)
-    expense_analytic_tag_ids = fields.Many2many(comodel_name='account.analytic.tag',  relation= 'expense_analytic_tag_products_rel',column1='id1_exp', culomn2='id2',string='Analytic Tags',stored=True)
+    income_analytic_tag_ids = fields.Many2one(comodel_name='account.analytic.tag', string='Analytic Tags',company_dependent=True)
+    expense_analytic_tag_ids = fields.Many2one(comodel_name='account.analytic.tag',  string='Analytic Tags',company_dependent=True)
 
     def _get_product_analytic_tags(self):
         self.ensure_one()
@@ -20,5 +20,5 @@ class ProductTemplate(models.Model):
 class ProductCategory(models.Model):
     _inherit = 'product.category'
 
-    income_analytic_tag_ids = fields.Many2many(comodel_name='account.analytic.tag', relation='income_analytic_tag_category_rel',column1='id1', culomn2='id2', string='Analytic Tags',stored=True)
-    expense_analytic_tag_ids = fields.Many2many(comodel_name='account.analytic.tag',relation= 'expense_analytic_tag_category_rel',column1='id1', culomn2='id2', string='Analytic Tags',stored=True)
+    income_analytic_tag_ids = fields.Many2one(comodel_name='account.analytic.tag', relation='income_analytic_tag_category_rel',string='Analytic Tags',company_dependent=True)
+    expense_analytic_tag_ids = fields.Many2one(comodel_name='account.analytic.tag',relation= 'expense_analytic_tag_category_rel', string='Analytic Tags',company_dependent=True)
