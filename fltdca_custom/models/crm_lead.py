@@ -11,7 +11,6 @@ class CrmLead(models.Model):
 	# sale_amount_total = fields.Monetary(compute='_compute_sale_amount_total', string="Sum of Orders", help="Untaxed Total of Confirmed Orders", currency_field='company_currency', store=True)
 	# sale_number = fields.Integer(compute='_compute_sale_amount_total', string="Number of Quotations", store=True)
 
-	# NEW FIELDS
 	quotation_no = fields.Integer(compute='_compute_sale_count', string='No. of Quotation', store=True)
 	sale_no = fields.Integer(compute='_compute_sale_count', string='No. of Sale Order', store=True)
 	invoice_no = fields.Integer(compute='_compute_sale_count', string='No. of Invoice Paid', store=True)
