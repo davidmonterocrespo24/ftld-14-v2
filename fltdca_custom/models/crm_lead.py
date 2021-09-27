@@ -30,7 +30,6 @@ class CrmLead(models.Model):
 				for invoice in order.invoice_ids:
 					if invoice.state in ['in_payment','paid']:
 						invoice_no += 1
-
 			record.quotation_no = quotation_no
 			record.sale_no = sale_no
 			record.invoice_no = invoice_no
