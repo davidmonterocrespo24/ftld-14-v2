@@ -1,6 +1,6 @@
 <odoo>
   <data>
-      <!---record id="crm_case_form_view_leads_inherit" model="ir.ui.view">
+      <record id="crm_case_form_view_leads_inherit" model="ir.ui.view">
         <field name="name">crm.case.form.view.leads.inherit</field>
         <field name="model">crm.lead</field>
         <field name="type">form</field>
@@ -16,6 +16,6 @@
                 <field name="country_state" invisible="0"/>
             </xpath>
         </field>
-    </record-->
+    </record>
   </data>
 </odoo>
